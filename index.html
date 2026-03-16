@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Profit Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-container">
+    <header>
+        <h1>Drink Profit Calculator</h1>
+        <p>Calculate margins and pricing scenarios for a single product.</p>
+    </header>
+
+    <main class="calculator-grid">
+        <section class="card input-section">
+            <h2>Product Details</h2>
+
+            <div class="input-group">
+                <label for="pack">Pack Quantity (e.g., 6 bottles)</label>
+                <input type="number" id="pack" value="6" min="1">
+            </div>
+
+            <div class="input-group">
+                <label for="sizeCl">Size per Unit (cl)</label>
+                <input type="number" id="sizeCl" value="70" min="1">
+            </div>
+
+            <div class="input-group">
+                <label for="servingMl">Serving Size (ml)</label>
+                <input type="number" id="servingMl" value="25" min="1">
+            </div>
+
+            <div class="input-group">
+                <label for="buyPrice">Total Buy Price (£)</label>
+                <input type="number" id="buyPrice" value="161.73" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="sellPrice">Target Sell Price (£)</label>
+                <input type="number" id="sellPrice" value="3.00" step="0.01">
+            </div>
+        </section>
+
+        <section class="card results-section">
+            <h2>Current Margins</h2>
+            <div class="results-grid">
+                <div class="result-box">
+                    <span class="label">Total Servings</span>
+                    <span class="value" id="res-servings">168</span>
+                </div>
+                <div class="result-box">
+                    <span class="label">Cost Per Serving</span>
+                    <span class="value" id="res-cost">£0.96</span>
+                </div>
+            </div>
+
+            <div class="primary-result" id="primary-profit-card">
+                <div class="profit-row">
+                    <span class="label">Profit (Cash)</span>
+                    <span class="value large" id="res-profit">£2.04</span>
+                </div>
+                <div class="profit-row">
+                    <span class="label">Profit Margin</span>
+                    <span class="value large" id="res-margin">68.0%</span>
+                </div>
+            </div>
+
+            <h2 class="scenarios-title">Pricing Scenarios</h2>
+            <div class="scenarios-grid">
+                <div class="scenario-box">
+                    <h3>+ 40p Increase</h3>
+                    <p>Sell at: <strong id="scen-sell-40">£3.40</strong></p>
+                    <p>Profit: <strong id="scen-prof-40">£2.44</strong></p>
+                    <p>Margin: <strong id="scen-marg-40">71.8%</strong></p>
+                </div>
+                <div class="scenario-box">
+                    <h3>+ 60p Increase</h3>
+                    <p>Sell at: <strong id="scen-sell-60">£3.60</strong></p>
+                    <p>Profit: <strong id="scen-prof-60">£2.64</strong></p>
+                    <p>Margin: <strong id="scen-marg-60">73.3%</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
